@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActividadsTable extends Migration {
+class CreateLugarsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class CreateActividadsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('actividads', function(Blueprint $table)
+		Schema::create('lugars', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('Nombre_Act', 40);
-			$table->string('Descripcion_Act', 300);
-			$table->date('Fecha_Act');
-			$table->string('Tipo_Act');
-			$table->string('Lider_Act');
+			$table->string('Nombre_Lugar',30);
+			$table->string('Tipo_Lugar', 40);
 			$table->timestamps();
 		});
 	}
@@ -31,7 +28,7 @@ class CreateActividadsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('actividads');
+		Schema::drop('lugars');
 	}
 
 }

@@ -15,6 +15,7 @@ class CreateAprendizsTable extends Migration {
 		Schema::create('aprendizs', function(Blueprint $table)
 		{
 		    $table->increments('id');
+		    $table->BigInteger('NumeroIdentificacion_Aprendiz');
 			$table->string('TipoDoc_Aprendiz' 04);
 			$table->string('Nombre_Aprendiz', 30);
 			$table->string('Apellido_Aprendiz', 30);
@@ -23,7 +24,7 @@ class CreateAprendizsTable extends Migration {
 			$table->char('Genero_Aprendiz');
 			$table->string('Email_Aprendiz');
 			$table->BigInteger('FichaCaracterizacion');
-			$table->password('Contraseña');
+			$table->password('Contraseña_Aprendiz');
 			$table->string('Eps');
 			$table->timestamps();
 		});

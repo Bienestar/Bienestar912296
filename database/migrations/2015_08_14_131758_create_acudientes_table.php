@@ -15,6 +15,7 @@ class CreateAcudientesTable extends Migration {
 		Schema::create('acudientes', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->char('TipoDoc_Acudiente');
 			$table->string ('Nombre_Acudiente', 20);
 			$table->string ('Apellido_Acudiene', 30);
 			$table->bigInteger ('Teleofono_Acudiene';
