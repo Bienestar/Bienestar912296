@@ -27,6 +27,14 @@ class CreateAprendizsTable extends Migration {
 			$table->password('Contraseña_Aprendiz');
 			$table->string('Eps');
 			$table->timestamps();
+
+			//asignamos atributo de la llave foranea
+			$table->integer('Fk_IdEncuesta_Opcion')->unsigned();
+			$table->integer('Fk_IdFicha_Caracterizacion')->unsigned();
+
+			//creamos la relacion
+			$table->foreign('Fk_IdEncuesta_Opcion')->references('id')->on('Encuesta_Opcion');
+			$table->foreign('Fk_IdFicha_Caracterizacion')->references('id')->on('FichaCaracterizacions');
 		});
 	}
 

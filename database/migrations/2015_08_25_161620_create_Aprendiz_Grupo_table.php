@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGruposTable extends Migration {
+class CreateAprendizGrupoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,18 +12,18 @@ class CreateGruposTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('grupos', function(Blueprint $table)
+		Schema::create('Aprendiz_Grupo', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('Tipo_Grupo', 60);
 			$table->timestamps();
 
 			//asignamos atributo de la llave foranea
-			$table->integer('Fk_IdAsesor')->unsigned();
-
+			$table->integer('Fk_IdAprendiz')->unsigned();
+			$table->integer('Fk_IdGrupo')->unsigned();
 
 			//creamos la relacion
-			$table->foreign('Fk_IdAsesor')->references('id')->on('Asesors');
+			$table->foreign('Fk_IdAprendiz')->references('id')->on('Aprendizs');
+			$table->foreign('Fk_IdGrupo')->references('id')->on('Grupos');
 		});
 	}
 
@@ -34,7 +34,7 @@ class CreateGruposTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('grupos');
+		Schema::drop('Aprendiz_Grupo');
 	}
 
 }

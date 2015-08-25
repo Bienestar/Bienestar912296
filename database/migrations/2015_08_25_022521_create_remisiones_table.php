@@ -19,6 +19,15 @@ class CreateRemisionesTable extends Migration {
 			$table->Date('Fecha_Remision');
 			$table->string('Descripcion_Remision', 300);
 			$table->timestamps();
+
+			//asignamos atributo de la llave foranea
+			$table->integer('Fk_IdObservaciones')->unsigned();
+
+
+			//creamos la relacion
+			$table->foreign('Fk_IdObservacion')->references('id')->on('Observacion');
+
+
 		});
 	}
 

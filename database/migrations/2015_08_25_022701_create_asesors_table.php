@@ -26,6 +26,13 @@ class CreateAsesorsTable extends Migration {
 			$table->password('Contraseña_Asesor');
 			$table->string('Cargo_Asesor', 10);
 			$table->timestamps();
+			//asignamos campo de llave forarena
+			$table->integer('Fk_IdArea')->unsigned();
+
+
+
+			//creamos la relacion
+			$table->Foreign('Fk_IdArea')->references('id')->on('Areas');
 		});
 	}
 

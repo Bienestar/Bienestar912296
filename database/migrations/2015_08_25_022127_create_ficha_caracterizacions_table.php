@@ -15,7 +15,17 @@ class CreateFichaCaracterizacionsTable extends Migration {
 		Schema::create('ficha_caracterizacions', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->BigInteger('Numero_Ficha');
+			$table->date('FechaInicio_Ficha');
+			$table->date('FechaFin_Ficha');
 			$table->timestamps();
+
+			//asignamos atributo de la llave foranea
+			$table->integer('Fk_IdProgramaFormacion')->unsigned();
+
+			//creamos la relaciones
+			$table->foreign('Fk_IdProgramaFormacion')->references('id')->on('Programa_Formacions');
+
 		});
 	}
 

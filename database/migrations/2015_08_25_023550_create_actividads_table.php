@@ -21,6 +21,12 @@ class CreateActividadsTable extends Migration {
 			$table->string('Tipo_Act');
 			$table->string('Lider_Act');
 			$table->timestamps();
+
+			//asignamos atributo de la llave foranea
+			$table->integer('Fk_IdGrupo')->unsigned();
+
+			//creamos la relacion
+			$table->foreing('Fk_IdGrupo')->references('id')->on('Grupos');
 		});
 	}
 
