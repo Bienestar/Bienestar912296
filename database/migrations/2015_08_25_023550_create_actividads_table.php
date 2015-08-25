@@ -26,7 +26,7 @@ class CreateActividadsTable extends Migration {
 			$table->integer('Fk_IdGrupo')->unsigned();
 
 			//creamos la relacion
-			$table->foreing('Fk_IdGrupo')->references('id')->on('Grupos');
+			$table->foreign('Fk_IdGrupo')->references('id')->on('Grupos');
 		});
 	}
 

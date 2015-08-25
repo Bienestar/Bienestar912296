@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAsesorAprendizTable extends Migration {
+class CreateAsesorEventoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -17,17 +17,16 @@ class CreateAsesorAprendizTable extends Migration {
 			$table->increments('id');
 			$table->string('Asistentes_AsEv', 60);
 			$table->string('Tipo_AsEv', 100);
-
-			$table->timestamps();
-
+		
 			//asignamos el atributo de la llave foranea
 			$table->integer('Fk_IdAsesor')->unsigned();
-			$table->ineger('Fk_IdEvento')->Unsigned();
-
-
+			$table->integer('Fk_IdEvento')->unsigned();
+			
 			//creamos las relaciones
-			$table->foreign('Fk_IdEvento')->references('id')->on('Eventos');
-			$table->foreign('Fk_IdAsesor')->references('id')->on('Asesors');
+			$table->foreign('Fk_IdAsesor')->references('id')->on('asesors');
+			
+			$table->foreign('Fk_IdEvento')->references('id')->on('eventos');
+			$table->timestamps();
 		});
 	}
 

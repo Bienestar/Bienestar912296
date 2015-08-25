@@ -16,7 +16,7 @@ class CreateAprendizsTable extends Migration {
 		{
 		    $table->increments('id');
 		    $table->BigInteger('NumeroIdentificacion_Aprendiz');
-			$table->string('TipoDoc_Aprendiz' 04);
+			$table->string('TipoDoc_Aprendiz', 4);
 			$table->string('Nombre_Aprendiz', 30);
 			$table->string('Apellido_Aprendiz', 30);
 			$table->string('Direccion_Aprendiz', 60);
@@ -24,17 +24,18 @@ class CreateAprendizsTable extends Migration {
 			$table->char('Genero_Aprendiz');
 			$table->string('Email_Aprendiz');
 			$table->BigInteger('FichaCaracterizacion');
-			$table->password('Contraseña_Aprendiz');
+			$table->String('Contraseña_Aprendiz');
 			$table->string('Eps');
-			$table->timestamps();
+			
 
 			//asignamos atributo de la llave foranea
-			$table->integer('Fk_IdEncuesta_Opcion')->unsigned();
+			
 			$table->integer('Fk_IdFicha_Caracterizacion')->unsigned();
 
 			//creamos la relacion
-			$table->foreign('Fk_IdEncuesta_Opcion')->references('id')->on('Encuesta_Opcion');
-			$table->foreign('Fk_IdFicha_Caracterizacion')->references('id')->on('FichaCaracterizacions');
+			
+			$table->foreign('Fk_IdFicha_Caracterizacion')->references('id')->on('Ficha_Caracterizacions');
+			$table->timestamps();
 		});
 	}
 

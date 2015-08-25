@@ -16,14 +16,14 @@ class CreateAsesorsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->BigInteger('NumeroIdentificacion_Asesor');
-			$table->string('TipoDoc_Asesor', 04);
+			$table->string('TipoDoc_Asesor', 4);
 			$table->string('Nombre_Asesor', 30);
 			$table->string('Apellido_Asesor', 30);
 			$table->string('Direccion_Asesor', 60);
 			$table->BigInteger('Telefono_Asesor');
 			$table->char('Genero_Asesor');
 			$table->string('Email_Asesor', 60);
-			$table->password('Contraseña_Asesor');
+			$table->String('Contraseña_Asesor');
 			$table->string('Cargo_Asesor', 10);
 			$table->timestamps();
 			//asignamos campo de llave forarena

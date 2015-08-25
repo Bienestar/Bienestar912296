@@ -16,13 +16,14 @@ class CreateProgramaFormacionsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('Nombre_Programa',60);
-			$table->timestamps();
+			
 
 			//asignamos atributo de la llave foranea
 			$table->integer('Fk_IdCoordinacion')->unsigned();
 
 			//creamos la relacion
 			$table->foreign('Fk_IdCoordinacion')->references('id')->on('Coordinacions');
+			$table->timestamps();
 		});
 	}
 

@@ -20,8 +20,11 @@ class CreateEncuestaOpcionTable extends Migration {
 			//asignamos el atributo de la llave foranea
 			$table->integer('Fk_IdOpcion')->unsigned();
 			$table->integer('Fk_IdEncuesta')->unsigned();
+			$table->integer('Fk_IdAprendiz')->unsigned();
 
 			//creamos la relacion
+			$table->foreign('Fk_IdAprendiz')->references('id')->on('Aprendizs');
+			
 			$table->foreign('Fk_IdOpcion')->references('id')->on('Opcions');
 			$table->foreign('Fk_IdEncuesta')->references('id')->on('Encuestas');
 		});

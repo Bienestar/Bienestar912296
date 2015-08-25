@@ -18,13 +18,14 @@ class CreateObservacionsTable extends Migration {
 			$table->date('Fecha_Obs');
 			$table->string('Descripcion_Obs',100);
 			$table->BigInteger('NumeroSesiones_Obs');
-			$table->timestamps();
-
+			
 			//asignamos atributo de la llave foranea
 			$table->integer('Fk_IdCita')->unsigned();
 
 			//creamos la relacion
 			$table->foreign('Fk_IdCita')->references('id')->on('Citas');
+			$table->timestamps();
+
 
 		});
 	}

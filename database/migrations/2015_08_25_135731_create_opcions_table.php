@@ -16,13 +16,14 @@ class CreateOpcionsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('Item_Opcion');
-			$table->timestamps();
+			
 
 			//asignamos el atributo de llave foranea
 			$table->integer('Fk_IdPregunta')->unsigned();
 
 			//creamos la relacion
 			$table->foreign('Fk_IdPregunta')->references('id')->on('Preguntas');
+			$table->timestamps();
 			
 
 		});
@@ -33,7 +34,7 @@ class CreateOpcionsTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()30
+	public function down()
 	{
 		Schema::drop('opcions');
 	}

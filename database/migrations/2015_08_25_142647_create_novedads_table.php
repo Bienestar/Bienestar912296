@@ -16,14 +16,15 @@ class CreateNovedadsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('Tipo_Novedad', 30);
-			$table->string ('Descripcion',300);
-			$table->timestamps();
+			$table->string('Descripcion',300);
+			
 
 			//asignamos nuevo atributo para llave foranea
 			$table->integer('Fk_IdAsesor')->unsigned();
 
 			//creamos la relacion
 			$table->Foreign('Fk_IdAsesor')->references('id')->on('Asesors');
+			$table->timestamps();
 			
 		});
 	}

@@ -16,11 +16,11 @@ class CreateAcudientesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->char('TipoDoc_Acudiente');
-			$table->string ('Nombre_Acudiente', 20);
-			$table->string ('Apellido_Acudiene', 30);
-			$table->bigInteger ('Teleofono_Acudiene';
-			$table->string ('Direccion_Acudiente', 60);
-			$table->bigInteger('Ncelular_Acudineee')
+			$table->String('Nombre_Acudiente', 20);
+			$table->String('Apellido_Acudiene');
+			$table->BigInteger('Teleofono_Acudiene');
+			$table->String('Direccion_Acudiente', 60);
+			$table->BigInteger('Ncelular_Acudineee');
 			$table->timestamps();
 		});
 	}

@@ -24,7 +24,7 @@ class CreateAprendizActividadTable extends Migration {
 
 			//Creamos relaciones
 			$table->Foreign('Fk_IdActividad')->references('id')->on('Actividads');
-			$table->Foreing('Fk_IdAprendiz')->references('id')->on('Aprendizs');
+			$table->Foreign('Fk_IdAprendiz')->references('id')->on('Aprendizs');
 		});
 	}
 

@@ -17,13 +17,14 @@ class CreatePreguntasTable extends Migration {
 			$table->increments('id');
 			$table->string('Enunciado',100);
 
-			$table->timestamps();
+			
 
 			//asignamos el atributoo de la llave foranea
 			$table->integer('Fk_IdEncuesta')->unsigned();
 
 			//creamos la relacion
-			$tabla->foreign('Fk_IdEncuesta')->references('id')->on('Encuestas');
+			$table->foreign('Fk_IdEncuesta')->references('id')->on('Encuestas');
+			$table->timestamps();
 		});
 	}
 
