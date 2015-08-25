@@ -15,6 +15,16 @@ class CreateApendizsTable extends Migration {
 		Schema::create('apendizs', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('TipoDoc_Aprendiz' 04);
+			$table->string('Nombre_Aprendiz', 30);
+			$table->string('Apellido_Aprendiz', 30);
+			$table->string('Direccion_Aprendiz', 60);
+			$table->BigInteger('Telefono_Aprendiz');
+			$table->char('Genero_Aprendiz');
+			$table->string('Email_Aprendiz');
+			$table->BigInteger('FichaCaracterizacion');
+			$table->password('Contraseña');
+			$table->string('Eps');
 			$table->timestamps();
 		});
 	}
