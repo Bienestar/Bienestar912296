@@ -2,7 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+//extendemos hacia el modelo
+use App\Models\Encuesta as Encuesta;
 use Illuminate\Http\Request;
 
 class EncuestaController extends Controller {
@@ -14,7 +15,8 @@ class EncuestaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$encuestas = Encuesta::orderBy('Fecha_Encuesta','asc')->paginate(4);
+		return \View::make('encuesta/list', compact('encuestas'));
 	}
 
 	/**
@@ -24,7 +26,7 @@ class EncuestaController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return \View::make('Encuesta/new');
 	}
 
 	/**
@@ -32,9 +34,11 @@ class EncuestaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$encuesta = new Encuesta;
+		$encuesta->create($request->all());
+		return redirect('encuesta');
 	}
 
 	/**
@@ -56,7 +60,8 @@ class EncuestaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		
+
 	}
 
 	/**
@@ -65,9 +70,9 @@ class EncuestaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request)
 	{
-		//
+
 	}
 
 	/**
@@ -79,6 +84,12 @@ class EncuestaController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function search(Request $request){
+	$encuestas = Encuesta::where('Fecha_Encuesta','like','%'.$request->Fecha.'%')->get();
+	return \View::make('encuesta/list', compact('encuestas'));
+
 	}
 
 }

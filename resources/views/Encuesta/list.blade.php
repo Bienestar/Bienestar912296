@@ -4,8 +4,8 @@
 		<div class="row">
 		{!! Form::open(['route' => 'encuesta/search', 'method' => 'post', 'novalidate', 'class' => 'form‐inline']) !!}
 			<div class="form‐group">
-				<label for="exampleInputName2">Documento del aprendiz</label>
-				<input type="text" class="form‐control" name = "Doc_A" >
+				<label for="exampleInputName2">Fecha</label>
+				<input type="text" class="form‐control" name = "Fecha" >
 						
 
 				<button type="submit" class="btn btn-primary">Buscar</button>
@@ -18,20 +18,26 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-			<th>Nombre</th>
-			<th>Existencia</th>
-			<th>Descripcion</th>
+			<th>Fecha</th>
+			<th>Numero de hermanos</th>
+			<th>Motivo de la consulta</th>
+			<th>Numero de embarazos</th>
+			<th>Motivo de la consulta</th>
+			<th>Numero de abortos</th>
+			<th>Genero</th>
 			</tr>
 		</thead>
 	<tbody>
-	@foreach($articulos as $articulo)
+	@foreach($encuestas as $encuesta)
 		<tr>
-			<td>{{ $articulo->Nombre }}</td>
-			<td>{{ $articulo->Existencia }}</td>
-			<td>{{ $articulo->Descripcion }}</td>
+			<td>{{ $encuesta->Fecha_Encuesta }}</td>
+			<td>{{ $encuesta->NumHermanos_Encuesta }}</td>
+			<td>{{ $encuesta->MotivoConsullta_Encuesta }}</td>
+			<td>{{ $encuesta->NumEmbarazos_Encuesta }}</td>
+			<td>{{ $encuesta->NumAbortos_Encuesta }}</td>
+			<td>{{ $encuesta->Genero_Encuesta }}</td>
 		<td>
-			<a class="btn btn-primary" href="{{ route('articulo.edit' , ['id' => $articulo->id]) }}" >Editar</a>
-			<a class="btn btn-danger" href="{{ route('articulo/destroy', ['id' => $articulo->id]) }}" >Eliminar</a>
+			<a class="btn btn-danger" href="{{ route('encuesta/destroy', ['id' => $encuesta->id]) }}" >Eliminar</a>
 		</td>
 		</tr>
 	@endforeach
@@ -39,7 +45,6 @@
 	
 	</table>
 	 
-            {!! $articulos->render() !!}
       
 	</div>
 </div>
