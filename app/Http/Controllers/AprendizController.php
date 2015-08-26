@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 //extendemos hacia el modelo
-use App\Models\Aprendiz as Aprendiz;
+use App\Models\Apendiz as Apendiz;
 
 use Illuminate\Http\Request;
 
@@ -17,6 +17,8 @@ class AprendizController extends Controller {
 	public function index()
 	{
 		//
+		$aprendices = Apendiz::all();
+		return \View::make('aprendiz/list', compact('aprendices'));
 	}
 
 	/**
@@ -27,6 +29,7 @@ class AprendizController extends Controller {
 	public function create()
 	{
 		//
+		return \View::make('Aprendiz/new');
 	}
 
 	/**

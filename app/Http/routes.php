@@ -52,7 +52,6 @@ Route::get('aprendiz/destroy/{id}', ['as' => 'aprendiz/destroy', 'uses'=>'Aprend
 Route::post('aprendiz/search', ['as' => 'aprendiz/search', 'uses' => 'AprendizController@search']);
 
 
-
 /*-----------------------------Rutas para el controlador de Area --------------------*/
 Route::resource('area','AreaController');
 
