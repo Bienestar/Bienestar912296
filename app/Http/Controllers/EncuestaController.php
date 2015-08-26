@@ -2,12 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-//extendemos hacia el modelo
-use App\Models\Encuesta as Encuesta;
 
 use Illuminate\Http\Request;
 
-class EncuestaControler extends Controller {
+class EncuestaController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

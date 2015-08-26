@@ -2,12 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-//extendemos hacia el modelo
-use App\Models\Opcion as Opcion;
 
 use Illuminate\Http\Request;
 
-class OpcionControler extends Controller {
+class OpcionController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
