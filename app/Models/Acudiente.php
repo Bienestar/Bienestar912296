@@ -7,6 +7,6 @@ class Acudiente extends Model {
 
 		protected $table = 'acudientes';
 	protected $fillable =['TipoDoc_Acudiente','Nombre_Acudiente','Apellido_Acudiene','Teleofono_Acudiene','Direccion_Acudiente','Ncelular_Acudineee'];
-	protected $guarder =['id'];
+	protected $guarded =['id'];
 
 }
