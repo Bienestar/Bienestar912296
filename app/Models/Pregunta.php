@@ -7,6 +7,6 @@ class Pregunta extends Model {
 		//declaramos los atributos declarando la tabla con $table, el fillable atributos que se puede modificar $guarder que jamas seran modificados 
 	protected $table = 'preguntas';
 	protected $fillable =['Enunciado','Fk_IdEncuesta'];
-	protected $guarder =['id'];
+	protected $guarded =['id'];
 
 }

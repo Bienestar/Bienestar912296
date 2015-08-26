@@ -7,6 +7,6 @@ class Actividad extends Model {
 
 	protected $table = 'actividads';
 	protected $fillable =['Nombre_Act','Descripcion_Act','Fecha_Act','Tipo_Act','Lider_Act','Fk_IdGrupo'];
-	protected $guarder =['id'];
+	protected $guarded =['id'];
 
 }

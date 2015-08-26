@@ -7,6 +7,6 @@ class Apendiz extends Model {
 
 	protected $table = 'Apendiz';
 	protected $fillable =['NumeroIdentificacion_Aprendiz','TipoDoc_Aprendiz','Nombre_Aprendiz','Apellido_Aprendiz','Direccion_Aprendiz','Telefono_Aprendiz','Genero_Aprendiz','Email_Aprendiz','FichaCaracterizacion','Contraseña_Aprendiz','Eps'];
-	protected $guarder =['id'];
+	protected $guarded =['id'];
 
 }

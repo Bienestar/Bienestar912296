@@ -7,5 +7,5 @@ class Area extends Model {
 
 	protected $table = 'areas';
 	protected $fillable =['Tipo_Area'];
-	protected $guarder =['id'];
+	protected $guarded =['id'];
 }
