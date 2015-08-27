@@ -2,7 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+//extendemos hacia el modelo
+use App\Models\Opcion as Opcion;
 use Illuminate\Http\Request;
 
 class OpcionController extends Controller {
@@ -14,7 +15,8 @@ class OpcionController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$opciones = Opcion::all();
+		return \View::make('encuesta/list', compact('encuestas'));
 	}
 
 	/**

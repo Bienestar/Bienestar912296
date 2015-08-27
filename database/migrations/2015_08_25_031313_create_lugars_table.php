@@ -17,6 +17,7 @@ class CreateLugarsTable extends Migration {
 			$table->increments('id');
 			$table->string('Nombre_Lugar',30);
 			$table->string('Tipo_Lugar', 40);
+			$table->string('Descripcion');
 			$table->timestamps();
 		});
 	}

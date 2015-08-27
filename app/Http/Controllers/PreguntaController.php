@@ -16,7 +16,8 @@ class PreguntaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$preguntas = Pregunta::orderBy('created_at','asc')->paginate(4);
+		return \View::make('preguntas/list', compact('preguntas'));
 	}
 
 	/**
@@ -26,7 +27,7 @@ class PreguntaController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return \View::make('preguntas/new');
 	}
 
 	/**
@@ -36,7 +37,9 @@ class PreguntaController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		$pregunta = new Pregunta;
+		$pregunta->create($request->all());
+		return redirect('pregunta');
 	}
 
 	/**
@@ -80,7 +83,9 @@ class PreguntaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$pregunta = Pregunta::find($id);
+		$pregunta->delete();
+		return redirect()->back();
 	}
 
 }

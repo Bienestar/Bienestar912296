@@ -15,8 +15,8 @@ class EncuestaController extends Controller {
 	 */
 	public function index()
 	{
-		$encuestas = Encuesta::orderBy('Fecha_Encuesta','asc')->paginate(4);
-		return \View::make('encuesta/list', compact('encuestas'));
+		$encuestas = Encuesta::orderBy('Tipo_Lugar','asc')->paginate(4);
+		return \View::make('lugar/list', compact('encuestas'));
 	}
 
 	/**
@@ -72,7 +72,7 @@ class EncuestaController extends Controller {
 	 */
 	public function update(Request $request)
 	{
-
+		
 	}
 
 	/**
@@ -83,7 +83,9 @@ class EncuestaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$encuesta = Encuesta::find($id);
+		$encuesta->delete();
+		return redirect()->back();
 	}
 
 	public function search(Request $request){
