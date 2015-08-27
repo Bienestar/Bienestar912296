@@ -17,6 +17,8 @@ class AprendizController extends Controller {
 	public function index()
 	{
 		//
+		$Aprendizs = Aprendiz::orderBy('Nombre_Aprendiz','asc');//->paginate(4);
+		return \View::make('Aprendiz/list', compact('Aprendizs'));
 	}
 
 	/**
