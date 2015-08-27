@@ -16,7 +16,8 @@ class EvidenciaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$evidencias = Evidencia::orderBy('Nombre_Evidencia','asc')->paginate(4);
+		return \View::make('Evidencias/list', compact('evidencias'));
 	}
 
 	/**
@@ -26,7 +27,7 @@ class EvidenciaController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return \View::make('Evidencias/new');
 	}
 
 	/**
@@ -34,9 +35,11 @@ class EvidenciaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$evidencia = new Evidencia;
+		$evidencia->create($request->all());
+		return redirect('evidencia');
 	}
 
 	/**
@@ -58,7 +61,8 @@ class EvidenciaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$evidencias = Evidencia::find($id);
+		return \View::make('Evidencias/update',compact('evidencias'));
 	}
 
 	/**
@@ -67,9 +71,15 @@ class EvidenciaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request)
 	{
-		//
+		$evidencias = Evidencia::find($request->id);
+		$evidencias->Nombre_Evidencia = $request->Nombre_Evidencia;
+		$evidencias->Archivo_Evidencia = $request->Archivo_Evidencia;
+		$evidencias->Fk_IdAprendiz_Actividad = $request->Fk_IdAprendiz_Actividad;
+
+		$evidencias->save();
+		return redirect('lugar');
 	}
 
 	/**
@@ -80,7 +90,13 @@ class EvidenciaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+	
 	}
 
+	public function search(Request $request){
+
+		$evidencias = Lugar::where('Nombre_Evidencia','like','%'.$request->Nombre.'%')->get();
+		return \View::make('Evidencias/list', compact('evidencias'));
+
+	}
 }

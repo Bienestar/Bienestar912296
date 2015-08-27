@@ -19,17 +19,17 @@
 		<thead>
 			<tr>
 			<th>Nombre</th>
-			<th>Tipo</th>
-			<th>Descripcion</th>
+			<th>Archivo</th>
+			<th>Evidencia</th>
 		
 			</tr>
 		</thead>
 	<tbody>
 	@foreach($lugares as $lugar)
 		<tr>
-			<td>{{ $lugar->Nombre_Lugar }}</td>
-			<td>{{ $lugar->Tipo_Lugar }}</td>
-			<td>{{	$lugar->Descripcion }}</td>
+			<td>{{ $lugar->Nombre_Evidencia }}</td>
+			<td>{{ $lugar->Archivo_Evidencia }}</td>
+			<td>{{ $lugar->Fk_IdAprendiz_Actividad }}</td>
 		<td>
 			<a class="btn btn-primary" href="{{ route('lugar.edit' , ['id' => $lugar->id]) }}" >Editar</a>
 			<a class="btn btn-danger" href="{{ route('lugar/destroy', ['id' => $lugar->id]) }}" >Eliminar</a>

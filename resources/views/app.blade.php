@@ -33,6 +33,11 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav">
+					<li><a href="{{ url('cita') }}">Citas</a></li>
+					<li><a href="{{ url('lugar') }}">Crear lugar</a></li>
+					
+				</ul>
 					<li><a href="{{ url('/') }}">Home</a></li>
 				</ul>
 
