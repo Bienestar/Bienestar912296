@@ -16,7 +16,8 @@ class CitaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$citas = Cita::orderBy('Fecha_Cita','asc')->paginate(5);
+		return \View::make('Citas/list', compact('citas'));
 	}
 
 	/**

@@ -7,7 +7,7 @@
 	<div class="col‐md‐10 col‐md‐offset‐1">
 
 	<div class="panel panel-default">
-				<div class="panel-heading">Nuevo Lugar</div>
+				<div class="panel-heading">Crear Nuevo Lugar</div>
 				<div class="panel-body">
 
 				@include('Plantilla.validacion')

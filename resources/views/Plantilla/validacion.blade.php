@@ -1,7 +1,7 @@
 
 	@if ($errors->any())
 	<div class="alert alert-danger" role="alert">
-		<p>Verifique los campos</p>
+		<p>Verificar los campos insertados</p>
 		<ul>
 			@foreach($errors->all() as $error)
 
