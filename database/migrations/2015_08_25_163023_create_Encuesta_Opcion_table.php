@@ -15,18 +15,19 @@ class CreateEncuestaOpcionTable extends Migration {
 		Schema::create('Encuesta_Opcion', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
+			
 
 			//asignamos el atributo de la llave foranea
 			$table->integer('Fk_IdOpcion')->unsigned();
-			$table->integer('Fk_IdEncuesta')->unsigned();
+			$table->integer('Fk_seguimiento')->unsigned();
 			$table->integer('Fk_IdAprendiz')->unsigned();
 
 			//creamos la relacion
 			$table->foreign('Fk_IdAprendiz')->references('id')->on('Aprendizs');
-			
+			$table->foreign('Fk_seguimiento')->references('id')->on('seguimientos');
 			$table->foreign('Fk_IdOpcion')->references('id')->on('Opcions');
-			$table->foreign('Fk_IdEncuesta')->references('id')->on('Encuestas');
+			$table->timestamps();
+			
 		});
 	}
 

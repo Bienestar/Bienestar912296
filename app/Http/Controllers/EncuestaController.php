@@ -72,7 +72,7 @@ class EncuestaController extends Controller {
 	 */
 	public function update(Request $request)
 	{
-
+		
 	}
 
 	/**
@@ -83,7 +83,9 @@ class EncuestaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$encuesta = Encuesta::find($id);
+		$encuesta->delete();
+		return redirect()->back();
 	}
 
 	public function search(Request $request){
