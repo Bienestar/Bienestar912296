@@ -9,4 +9,15 @@ class Evidencia extends Model {
 	protected $fillable =['Nombre_Evidencia','Archivo_Evidencia','Fk_IdAprendiz_Actividad'];
 	protected $guarded =['id'];
 
+
+	public function scopeNombre($query, $nombre)
+	{
+		if(trim($nombre !="")){
+
+			$query->where('Fk_IdAprendiz_Actividad',"like","%nombre%");
+
+		}
+
+	}
+
 }

@@ -15,9 +15,10 @@ class LugarController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$lugares = Lugar::orderBy('Tipo_Lugar','asc')->paginate(4);
+		
+		$lugares = Lugar::name($request->get('name'))->orderBy('Nombre_Lugar','asc')->paginate(1);
 		return \View::make('lugares/list', compact('lugares'));
 	}
 
@@ -96,10 +97,4 @@ class LugarController extends Controller {
 		return redirect()->back();
 	}
 
-	public function search(Request $request){
-
-		$lugares = Lugar::where('Nombre_Lugar','like','%'.$request->Nombre.'%')->get();
-		return \View::make('Lugares/list', compact('lugares'));
-
-	}
 }

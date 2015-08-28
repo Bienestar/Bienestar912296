@@ -2,15 +2,17 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-		{!! Form::open(['route' => 'evidencia/search', 'method' => 'post', 'novalidate', 'class' => 'form‐inline' ]) !!}
-			<div class="form‐group">
-				<label for="exampleInputName2">Nombre del lugar</label>
-				<input type="text" class="form‐control" name = "Nombre" >
+		{!! Form::open(['route' => 'evidencia.index', 'method' => 'GET', 'novalidate', 'class' => 'form‐inline' ]) !!}
+			<div class="navbar-form navbar-left">
+				<label for="exampleInputName2">Nombre</label>
+
+				{!! Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Documento']) !!}
+				
 						
 
 				<button type="submit" class="btn btn-primary">Buscar</button>
 				<a href="{{ route('evidencia.index') }}" class="btn btn-success">Todo</a>
-				<a href="{{ route('eviencia.create') }}" class="btn btn-success">Subir evidencia </a>
+				<a href="{{ route('evidencia.create') }}" class="btn btn-success">Subir evidencia</a>
 				</div>
 		{!! Form::close() !!}
 	<br>
@@ -31,7 +33,7 @@
 			<td>{{ $evidencia->Tipo_Lugar }}</td>
 			<td>{{	$evidencia->Descripcion }}</td>
 		<td>
-			<a class="btn btn-primary" href="{{ route('evidencia.edit' , ['id' => $evidencia->id]) }}" >Editar</a>
+
 
 		</td>
 		</tr>

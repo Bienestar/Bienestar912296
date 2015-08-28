@@ -2,10 +2,12 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-		{!! Form::open(['route' => 'lugar/search', 'method' => 'post', 'novalidate', 'class' => 'form‐inline']) !!}
-			<div class="form‐group">
+		{!! Form::open(['route' => 'lugar.index', 'method' => 'GET', 'novalidate', 'class' => 'form‐inline', 'role' => 'search']) !!}
+			<div class="navbar-form navbar-left">
 				<label for="exampleInputName2">Nombre del lugar</label>
-				<input type="text" class="form‐control" name = "Nombre" >
+
+				{!! Form::text('name',null,['class' => 'form-control', 'placeholder' => 'Capilla']) !!}
+				
 						
 
 				<button type="submit" class="btn btn-primary">Buscar</button>
@@ -27,9 +29,9 @@
 	<tbody>
 	@foreach($lugares as $lugar)
 		<tr>
-			<td>{{ $lugar->Nombre_Evidencia }}</td>
-			<td>{{ $lugar->Archivo_Evidencia }}</td>
-			<td>{{ $lugar->Fk_IdAprendiz_Actividad }}</td>
+			<td>{{ $lugar->Nombre_Lugar }}</td>
+			<td>{{ $lugar->Tipo_Lugar }}</td>
+			<td>{{ $lugar->Descripcion }}</td>
 		<td>
 			<a class="btn btn-primary" href="{{ route('lugar.edit' , ['id' => $lugar->id]) }}" >Editar</a>
 			<a class="btn btn-danger" href="{{ route('lugar/destroy', ['id' => $lugar->id]) }}" >Eliminar</a>
@@ -40,7 +42,7 @@
 	
 	</table>
 	 
-           
+           {!! $lugares->render()!!}
       
 	</div>
 </div>

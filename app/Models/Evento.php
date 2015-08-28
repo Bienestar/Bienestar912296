@@ -10,4 +10,17 @@ class Evento extends Model {
 	protected $fillable =['Nombre_Evento','FechaIncio_Evento','FechaFinalizacion_Evento','Direccion_Evento','Restricciones','Cupos_Envento','Descripcion_Envento','Estado_Evento'];
 	protected $guarded =['id'];
 
+
+	public function scopeName($query, $name)
+	{
+		if(trim($name !=""))
+		{
+			$query->where('Nombre_Evento',"like", "%$name%");
+
+		}
+			
+
+	}
+		
+
 }

@@ -14,9 +14,9 @@ class EvidenciaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$evidencias = Evidencia::orderBy('Nombre_Evidencia','asc')->paginate(4);
+		$evidencias = Evidencia::nombre($request->get('nombre'))->orderBy('Nombre_Evidencia','asc')->paginate(4);
 		return \View::make('Evidencias/list', compact('evidencias'));
 	}
 

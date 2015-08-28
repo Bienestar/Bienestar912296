@@ -9,4 +9,15 @@ class Cita extends Model {
 	protected $fillable =['Fecha_Cita','Hora_Cita','Estado_Cita','Fk_IdAprendiz','Fk_IdLugar','Fk_IdAsesor'];
 	protected $guarded =['id'];
 
+
+
+	public function scopeFecha($query, $fecha)
+	{
+		if (trim($fecha) !="")
+		{
+		
+		$query->where('Fecha_Cita',"Like","%$fecha%");
+		}
+	}
+
 }

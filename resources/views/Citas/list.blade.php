@@ -2,15 +2,17 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-		{!! Form::open(['route' => 'cita/search', 'method' => 'post', 'novalidate', 'class' => 'form‐inline']) !!}
-			<div class="form‐group">
-				<label for="exampleInputName2">Nombre del Aprendiz</label>
-				<input type="text" class="form‐control" name = "Nombre" >
+		{!! Form::open(['route' => 'cita.index', 'method' => 'GET', 'novalidate', 'class' => 'form‐inline' ,'role' => 'search']) !!}
+			<div class="navbar-form navbar-left">
+				<label for="exampleInputName2">Fecha</label>
+
+				{!! Form::text('fecha',null,['class' => 'form-control', 'placeholder' => '23']) !!}
+				
 						
 
 				<button type="submit" class="btn btn-primary">Buscar</button>
 				<a href="{{ route('cita.index') }}" class="btn btn-success">Todo</a>
-				<a href="{{ route('cita.create') }}" class="btn btn-success">Solicitar Cita</a>
+				<a href="{{ route('cita.create') }}" class="btn btn-success">Crear Cita</a>
 				</div>
 		{!! Form::close() !!}
 	<br>
@@ -46,7 +48,7 @@
 	
 	</table>
 	 
-           
+           {!! $citas->render() !!}
       
 	</div>
 </div>

@@ -9,4 +9,12 @@ class Lugar extends Model {
 	protected $fillable =['Nombre_Lugar','Tipo_Lugar','Descripcion'];
 	protected $guarded =['id'];
 
+	public function scopeName($query, $name)
+	{
+		if(trim($name) !="")
+		{
+		$query->where('Nombre_Lugar',"like", "%$name%");
+		}
+	}
+
 }

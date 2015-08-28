@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 //extendemos hacia el modelo
 use App\Models\Novedad as Novedad;
 
+use App\Models\Asesor as Asesor;
 use Illuminate\Http\Request;
 
 class NovedadController extends Controller {
@@ -14,9 +15,10 @@ class NovedadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		//
+		$novedades = Novedad::name($request->get('name'))->orderBy('Tipo_Novedad','asc')->paginate(5);
+		return \View::make('Novedades/list', compact('novedades'));
 	}
 
 	/**
@@ -26,7 +28,10 @@ class NovedadController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$asesor = ['asesor' => Asesor::lists('Nombre_Asesor','id')];
+	
+		return \View::make('Novedades/new')->with('asesor', $asesor);
+	
 	}
 
 	/**
@@ -34,9 +39,12 @@ class NovedadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		
+		$novedad = new Novedad;
+		$novedad->create($request->all());
+		return redirect('novedad');
 	}
 
 	/**
@@ -47,7 +55,7 @@ class NovedadController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		
 	}
 
 	/**
@@ -58,7 +66,8 @@ class NovedadController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$novedades = Novedad::find($id);
+		return \View::make('Novedades/update',compact('novedades'));
 	}
 
 	/**
@@ -67,9 +76,16 @@ class NovedadController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request)
 	{
-		//
+		$novedades = Novedad::find($request->id);
+		$novedades->Tipo_Novedad = $request->Tipo_Novedad;
+		$novedades->Descripcion = $request->Descripcion;
+		
+		
+		
+		$novedades->save();
+		return redirect('novedad');
 	}
 
 	/**
@@ -80,7 +96,9 @@ class NovedadController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$novedad = Novedad::find($id);
+		$novedad->delete();
+		return redirect()->back();
 	}
 
 }

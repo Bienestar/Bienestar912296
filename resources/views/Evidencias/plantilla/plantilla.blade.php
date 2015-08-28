@@ -12,7 +12,7 @@
 
 						<div class="form-group">
 						{!! Form::label('nombre', 'Aprendiz') !!}
-						{!! Form::select('Fk_IdAprendiz_Actividad',$actividad , ['class' => 'form-control', ]) !!}
+						{!! Form::select('Fk_IdAprendiz_Actividad', $actividad , ['class' => 'form-control', ]) !!}
 							
 						</div>
 

@@ -18,9 +18,10 @@ class CitaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$citas = Cita::orderBy('Fecha_Cita','asc')->paginate(5);
+		
+		$citas = Cita::fecha($request->get('fecha'))->orderBy('Fecha_Cita','asc')->paginate(5);
 		return \View::make('Citas/list', compact('citas'));
 	}
 
@@ -106,11 +107,6 @@ class CitaController extends Controller {
 		return redirect()->back();
 	}
 
-	public function search(Request $request){
 
-		$citas = Cita::where('Fk_IdAprendiz','like','%'.$request->Nombre.'%')->get();
-		return \View::make('Citas/list', compact('citas'));
-
-	}
 
 }

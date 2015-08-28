@@ -28,7 +28,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="#">Bienestar</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,6 +36,9 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('cita') }}">Citas</a></li>
 					<li><a href="{{ url('lugar') }}">Crear lugar</a></li>
+					<li><a href="{{ url('evidencia') }}">Evidencia</a></li>
+					<li><a href="{{ url('evento') }}">Eventos</a></li>
+					<li><a href="{{ url('novedad') }}">Novedades</a></li>
 					
 				</ul>
 					<li><a href="{{ url('/') }}">Home</a></li>
