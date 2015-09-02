@@ -13,8 +13,7 @@
 					{!! Form::model($citas, ['route' => 'cita.update', 'method' => 'put', 'novalidate']) !!}
 						{!! Form::hidden('id', $citas->id) !!}
 
-								@include(Citas.plantilla.plantilla)
-			
+								@include('Citas.plantilla.plantilla')
 						<div class="form‐group">
 							{!! Form::submit('Enviar', ['class' => 'btn btn‐success ' ] ) !!}
 						</div>

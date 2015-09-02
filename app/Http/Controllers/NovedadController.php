@@ -66,7 +66,7 @@ class NovedadController extends Controller {
 	 */
 	public function edit($id)
 	{	
-		$asesor => ['asesor' => Asesor::lists('Nombre_asesor','id')];
+		$asesor = ['asesor' => Asesor::lists('Nombre_asesor','id')];
 		$novedades = Novedad::find($id);
 		return \View::make('Novedades/update',compact('novedades','asesor'));
 	}

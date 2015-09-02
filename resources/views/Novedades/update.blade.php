@@ -12,7 +12,7 @@
 					{!! Form::model($novedades, ['route' => 'novedad.update', 'method' => 'put', 'novalidate']) !!}
 						{!! Form::hidden('id', $novedades->id) !!}
 
-							@include(Novedades.plantilla.plantilla)
+							@include('Novedades.plantilla.plantilla')
 							
 						<div class="form‐group">
 						{!! Form::submit('Enviar', ['class' => 'btn btn‐success ' ] ) !!}

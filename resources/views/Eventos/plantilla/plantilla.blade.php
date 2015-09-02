@@ -25,7 +25,7 @@
 
 	<div class="form-group">
 		{!! Form::label('c', 'Cupos') !!}
-		{!! Form::number('Cupos_Evento',null , ['class' => 'form-control', 'placeholder' => 'Camiseta Blanca']) !!}
+		{!! Form::number('Cupos_Envento',null , ['class' => 'form-control']) !!}
 	</div>
 
 	<div class="form-group">

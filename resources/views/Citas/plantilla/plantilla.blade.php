@@ -21,9 +21,6 @@
 						</div>
 
 
-
-						
-
 						<div class="form-group">
 						{!! Form::label('Nombre', 'Nombre') !!}
 						{!! Form::select('Fk_IdAprendiz', $aprendiz, null,['class' => 'form-control']) !!}

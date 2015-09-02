@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 //extendemos hacia el modelo
 use App\Models\Evidencia as Evidencia;
-
+use App\Models\Aprendiz as Aprendiz;
 use Illuminate\Http\Request;
 
 class EvidenciaController extends Controller {
@@ -15,7 +15,7 @@ class EvidenciaController extends Controller {
 	 * @return Response
 	 */
 	public function index(Request $request)
-	{
+	{	
 		$evidencias = Evidencia::nombre($request->get('nombre'))->orderBy('Nombre_Evidencia','asc')->paginate(4);
 		return \View::make('Evidencias/list', compact('evidencias'));
 	}
@@ -26,8 +26,9 @@ class EvidenciaController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{
-		return \View::make('Evidencias/new');
+	{	
+		$aprendiz = ['aprendiz' => Aprendiz::lists('Nombre_Aprendiz','id')];
+		return \View::make('Evidencias/new')->with('aprendiz');
 	}
 
 	/**

@@ -1,3 +1,5 @@
+@extends('app')
+@section('content')
 <html>
 	<head>
 		<title>Laravel</title>
@@ -40,9 +42,10 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="title">Bienestar</div>
+				
 			</div>
 		</div>
 	</body>
 </html>
+@endsection
