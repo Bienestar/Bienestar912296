@@ -18,7 +18,6 @@ class CreateFichaCaracterizacionsTable extends Migration {
 			$table->BigInteger('Numero_Ficha');
 			$table->date('FechaInicio_Ficha');
 			$table->date('FechaFin_Ficha');
-		
 
 			//asignamos atributo de la llave foranea
 			$table->integer('Fk_IdProgramaFormacion')->unsigned();
