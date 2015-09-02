@@ -10,7 +10,11 @@
 
 				<button type="submit" class="btn btn-primary">Buscar</button>
 				<a href="{{ route('aprendiz.index') }}" class="btn btn-success">Todo</a>
+<<<<<<< HEAD
 				<a href="{{ route('aprendiz.create') }}" class="btn btn-success">Nuevo Lugar</a>
+=======
+				<a href="{{ route('aprendiz.create') }}" class="btn btn-success">Nuevo Aprendiz</a>
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 				</div>
 		{!! Form::close() !!}
 	<br>
@@ -28,6 +32,7 @@
 			<th>Email</th>
 			<th>Contraseña</th>
 			<th>Eps</th>
+<<<<<<< HEAD
 			</tr>
 		</thead>
 	<tbody>
@@ -43,6 +48,25 @@
 			<td>{{	$Aprendiz->Email }}</td>
 			<td>{{	$Aprendiz->Contraseña }}</td>
 			<td>{{	$Aprendiz->Eps }}</td>
+=======
+			<th>Ficha Caracterizacion</th>
+			</tr>
+		</thead>
+	<tbody>
+	@foreach($aprendices as $Aprendiz)
+		<tr>
+			<td>{{ $Aprendiz->NumeroIdentificaion_Aprendiz}}</td>
+			<td>{{ $Aprendiz->TipoDoc_Aprendiz }}</td>
+			<td>{{  $Aprendiz->Nombre_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Apellido_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Direccion_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Telefono_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Genero_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Email_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Contraseña_Aprendiz }}</td>
+			<td>{{	$Aprendiz->Eps }}</td>
+			<td>{{	$Aprendiz->Fk_FichaCaracterizacion }}</td>
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 		<td>
 			<a class="btn btn-primary" href="{{ route('Aprendiz.edit' , ['id' => $Aprendiz->id]) }}" >Editar</a>
 			<a class="btn btn-danger" href="{{ route('Aprendiz/destroy', ['id' => $Aprendiz->id]) }}" >Eliminar</a>

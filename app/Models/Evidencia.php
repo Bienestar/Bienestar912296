@@ -9,6 +9,7 @@ class Evidencia extends Model {
 	protected $fillable =['Nombre_Evidencia','Archivo_Evidencia','Fk_IdAprendiz_Actividad'];
 	protected $guarded =['id'];
 
+<<<<<<< HEAD
 
 	public function scopeNombre($query, $nombre)
 	{
@@ -20,4 +21,6 @@ class Evidencia extends Model {
 
 	}
 
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

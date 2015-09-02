@@ -9,6 +9,7 @@ class Cita extends Model {
 	protected $fillable =['Fecha_Cita','Hora_Cita','Estado_Cita','Fk_IdAprendiz','Fk_IdLugar','Fk_IdAsesor'];
 	protected $guarded =['id'];
 
+<<<<<<< HEAD
 
 
 	public function scopeFecha($query, $fecha)
@@ -20,4 +21,6 @@ class Cita extends Model {
 		}
 	}
 
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

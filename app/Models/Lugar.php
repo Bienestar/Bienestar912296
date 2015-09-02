@@ -9,6 +9,7 @@ class Lugar extends Model {
 	protected $fillable =['Nombre_Lugar','Tipo_Lugar','Descripcion'];
 	protected $guarded =['id'];
 
+<<<<<<< HEAD
 	public function scopeName($query, $name)
 	{
 		if(trim($name) !="")
@@ -17,4 +18,6 @@ class Lugar extends Model {
 		}
 	}
 
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

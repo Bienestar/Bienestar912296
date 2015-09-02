@@ -19,10 +19,17 @@ class CreateProgramaFormacionsTable extends Migration {
 			
 
 			//asignamos atributo de la llave foranea
+<<<<<<< HEAD
 			$table->integer('Fk_IdCoordinacion')->unsigned();
 
 			//creamos la relacion
 			$table->foreign('Fk_IdCoordinacion')->references('id')->on('Coordinacions');
+=======
+			$table->integer('FK_IdCoordinacion')->unsigned();
+
+			//creamos la relacion
+			$table->foreign('FK_IdCoordinacion')->references('id')->on('Coordinacions');
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 			$table->timestamps();
 		});
 	}

@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CrearLugarRequest extends Request {
+class CrearFichaRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,13 +22,11 @@ class CrearLugarRequest extends Request {
 	public function rules()
 	{
 		return [
-			'Nombre_Lugar' 	=> 'required|unique:lugars,Nombre_Lugar',
-			'Tipo_Lugar'	=> 'required|string',
-<<<<<<< HEAD
-			'Descripcion'	=> 'required|string'
-=======
-			'Descripcion'	=> 'required|numeric'
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
+		'Numero_Ficha' 	=> 'required|unique:Ficha_Caracterizacions,Numero_Ficha',
+			'FechaInicio_Ficha'	=> 'required',
+			'FechaFin_Ficha'	=> 'required'
+			//
 		];
 	}
 

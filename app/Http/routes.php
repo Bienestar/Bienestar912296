@@ -196,7 +196,31 @@ Route::post('remision/search', ['as' => 'remision/search', 'uses' => 'Remisiones
 
 
 
+<<<<<<< HEAD
 
+=======
+Route::resource('fichaCaracterizacion','FichaCaracterizacionController');
+
+//Ruta para la funcion eliminar del controlador 
+Route::get('fichaCaracterizacion/destroy/{id}', ['as' => 'fichaCaracterizacion/destroy', 'uses'=>'FichaCaracterizacionController@destroy']);
+//Ruta paa realizar la busqueda de registros
+Route::post('fichaCaracterizacion/search', ['as' => 'fichaCaracterizacion/search', 'uses' => 'FichaCaracterizacionController@search']);
+
+
+
+
+Route::resource('ProgramaFormacion','ProgramaFormacionController');
+//Ruta para la funcion eliminar del controlador 
+Route::get('ProgramaFormacion/destroy/{id}', ['as' => 'ProgramaFormacion/destroy', 'uses'=>'ProgramaFormacionController@destroy']);
+//Ruta paa realizar la busqueda de registros
+Route::post('ProgramaFormacion/search', ['as' => 'ProgramaFormacion/search', 'uses' => 'ProgramaFormacionController@search']);
+
+Route::resource('coordinacion','CoordinacionController');
+//Ruta para la funcion eliminar del controlador 
+Route::get('coordinacion/destroy/{id}', ['as' => 'coordinacion/destroy', 'uses'=>'CoordinacionController@destroy']);
+//Ruta paa realizar la busqueda de registros
+Route::post('coordinacion/search', ['as' => 'coordinacion/search', 'uses' => 'CoordinacionController@search']);
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 
 
 

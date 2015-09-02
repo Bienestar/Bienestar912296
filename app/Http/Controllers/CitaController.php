@@ -4,11 +4,15 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 //extendemos hacia el modelo
 use App\Models\Cita as Cita;
+<<<<<<< HEAD
 use App\Models\Aprendiz as Aprendiz;
 use App\Models\Lugar as Lugar;
 use App\Models\Asesor as Asesor;
 use App\Http\Requests\CrearCitaRequest;
 //utilizamos el request para validar los campos
+=======
+
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 use Illuminate\Http\Request;
 
 class CitaController extends Controller {
@@ -18,11 +22,17 @@ class CitaController extends Controller {
 	 *
 	 * @return Response
 	 */
+<<<<<<< HEAD
 	public function index(Request $request)
 	{
 		
 		$citas = Cita::fecha($request->get('fecha'))->orderBy('Fecha_Cita','asc')->paginate(5);
 		return \View::make('Citas/list', compact('citas'));
+=======
+	public function index()
+	{
+		//
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 	}
 
 	/**
@@ -32,11 +42,15 @@ class CitaController extends Controller {
 	 */
 	public function create()
 	{
+<<<<<<< HEAD
 		$aprendiz = ['aprendiz' => Aprendiz::lists('Nombre_Aprendiz','id')];
 		$lugar = ['lugar' => Lugar::lists('Nombre_Lugar','id')];
 		$asesor = ['asesor' => Asesor::lists('Nombre_Asesor','id')];
 	
 		return \View::make('Citas/new')->with('lugar', $lugar)->with('asesor', $asesor)->with('aprendiz', $aprendiz);
+=======
+		//
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 	}
 
 	/**
@@ -44,11 +58,17 @@ class CitaController extends Controller {
 	 *
 	 * @return Response
 	 */
+<<<<<<< HEAD
 	public function store(CrearCitaRequest $request)
 	{
 		$cita = new Cita;
 		$cita->create($request->all());
 		return redirect('cita');
+=======
+	public function store()
+	{
+		//
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 	}
 
 	/**
@@ -70,6 +90,7 @@ class CitaController extends Controller {
 	 */
 	public function edit($id)
 	{
+<<<<<<< HEAD
 		$citas = Cita::find($id);
 		$aprendiz = ['aprendiz' => Aprendiz::lists('Nombre_Aprendiz','id')];
 		$lugar = ['lugar' => Lugar::lists('Nombre_Lugar','id')];
@@ -77,6 +98,9 @@ class CitaController extends Controller {
 
 		
 		return \View::make('Citas/update',compact('citas','aprendiz','asesor','lugar'));
+=======
+		//
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 	}
 
 	/**
@@ -85,6 +109,7 @@ class CitaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+<<<<<<< HEAD
 	public function update(Request $request)
 	{
 		$citas = Cita::find($request->id);
@@ -97,6 +122,11 @@ class CitaController extends Controller {
 
 		$citas->save();
 		return redirect('cita');
+=======
+	public function update($id)
+	{
+		//
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 	}
 
 	/**
@@ -107,6 +137,7 @@ class CitaController extends Controller {
 	 */
 	public function destroy($id)
 	{
+<<<<<<< HEAD
 		$cita = Cita::find($id);
 		$cita->delete();
 		return redirect()->back();
@@ -114,4 +145,9 @@ class CitaController extends Controller {
 
 
 
+=======
+		//
+	}
+
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

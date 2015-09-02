@@ -7,6 +7,7 @@ html {
 body {
   margin: 0;
 }
+<<<<<<< HEAD
 
 span {
 color: #0C79D8;
@@ -20,6 +21,8 @@ color: #0C79D8;
         color: #C3C3C3;
         }
 
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 article,
 aside,
 details,
@@ -2068,7 +2071,11 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
+<<<<<<< HEAD
   border-top: 2px solid #dddddd;
+=======
+  border-top: 1px solid #dddddd;
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }
 .table > thead > tr > th {
   vertical-align: bottom;
@@ -3812,8 +3819,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   overflow-x: visible;
   padding-right: 15px;
   padding-left: 15px;
+<<<<<<< HEAD
   border-top: 3px solid transparent;
   box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.1);
+=======
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
   -webkit-overflow-scrolling: touch;
 }
 .navbar-collapse.in {

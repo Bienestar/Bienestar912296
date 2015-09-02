@@ -10,6 +10,7 @@ class Evento extends Model {
 	protected $fillable =['Nombre_Evento','FechaIncio_Evento','FechaFinalizacion_Evento','Direccion_Evento','Restricciones','Cupos_Envento','Descripcion_Envento','Estado_Evento'];
 	protected $guarded =['id'];
 
+<<<<<<< HEAD
 
 	public function scopeName($query, $name)
 	{
@@ -23,4 +24,6 @@ class Evento extends Model {
 	}
 		
 
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

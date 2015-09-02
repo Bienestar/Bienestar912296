@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 @extends('app')
 @section('content')
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 <html>
 	<head>
 		<title>Laravel</title>
@@ -42,10 +45,18 @@
 	<body>
 		<div class="container">
 			<div class="content">
+<<<<<<< HEAD
 				<div class="title">Bienestar</div>
 				
+=======
+				<div class="title">Laravel 5</div>
+				<div class="quote">{{ Inspiring::quote() }}</div>
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 			</div>
 		</div>
 	</body>
 </html>
+<<<<<<< HEAD
 @endsection
+=======
+>>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
