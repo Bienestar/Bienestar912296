@@ -11,6 +11,8 @@
 						<input type="time" name="Hora_Cita" class="form-control">
 							
 						</div>
+
+						
 						<div class="form-group">
 								
 						{!! Form::label('date','Estado') !!}

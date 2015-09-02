@@ -10,17 +10,20 @@
 				<div class="panel-heading">Crear Nuevo Evento</div>
 				<div class="panel-body">
 
-				@include('Plantilla.validacion')
-	{!! Form::open(['route' => 'evento.store', 'method' => 'post', 'novalidate']) !!}
+						
+					@include('Plantilla.validacion')
+					{!! Form::open(['route' => 'evento.store', 'method' => 'post', 'novalidate']) !!}
 			
-				@include('eventos.plantilla.plantilla')
+						@include('eventos.plantilla.plantilla')
 
-			<div class="form‐group">
-					{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
-			</div>
-	{!! Form::close() !!}
+						<div class="form‐group">
+							{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
+						</div>
+					{!! Form::close() !!}
 
-		</div>
+				</div>
+	</div>
+	</div>
 	</div>
 </div>
 @endsection

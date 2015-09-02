@@ -11,18 +11,19 @@
 				<div class="panel-body">
 
 				@include('Plantilla.validacion')
-	{!! Form::open(['route' => 'cita.store', 'method' => 'post', 'novalidate']) !!}
+					{!! Form::open(['route' => 'cita.store', 'method' => 'post', 'novalidate']) !!}
 			
-						
-						
-				@include('Citas.plantilla.plantilla')
+							@include('Citas.plantilla.plantilla')
 
-			<div class="form‐group">
-					{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
-			</div>
-	{!! Form::close() !!}
+						<div class="form‐group">
+							{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
+						</div>
+					{!! Form::close() !!}
 
-		</div>
+				</div>
+	</div>
+	</div>
 	</div>
 </div>
+
 @endsection

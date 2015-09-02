@@ -38,10 +38,10 @@
 			<td>{{ $cita->Fk_IdAprendiz }}</td>
 			<td>{{ $cita->Fk_IdLugar }}</td>
 			<td>{{ $cita->Fk_IdAsesor }}</td>
-		<td>
-			<a class="btn btn-primary" href="{{ route('cita.edit' , ['id' => $cita->id]) }}" >Editar</a>
-			<a class="btn btn-danger" href="{{ route('cita/destroy', ['id' => $cita->id]) }}" >Eliminar</a>
-		</td>
+			<td>
+				<a class="btn btn-primary" href="{{ route('cita.edit' , ['id' => $cita->id]) }}" >Editar</a>
+				<a class="btn btn-danger" href="{{ route('cita/destroy', ['id' => $cita->id]) }}" >Eliminar</a>
+			</td>
 		</tr>
 	@endforeach
 	</tbody>

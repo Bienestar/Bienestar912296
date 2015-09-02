@@ -33,11 +33,10 @@
 			<td>{{ $novedad->Tipo_Novedad }}</td>
 			<td>{{ $novedad->Descripcion }}</td>
 			<td>{{ $novedad->Fk_IdAsesor }}</td>
-
-		<td>
+			<td>
 			<a class="btn btn-primary" href="{{ route('novedad.edit' , ['id' => $novedad->id]) }}" >Editar</a>
 			<a class="btn btn-danger" href="{{ route('novedad/destroy', ['id' => $novedad->id]) }}" >Eliminar</a>
-		</td>
+			</td>
 		</tr>
 	@endforeach
 	</tbody>

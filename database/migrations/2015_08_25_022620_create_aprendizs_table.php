@@ -23,7 +23,7 @@ class CreateAprendizsTable extends Migration {
 			$table->BigInteger('Telefono_Aprendiz');
 			$table->char('Genero_Aprendiz');
 			$table->string('Email_Aprendiz');
-			$table->BigInteger('FichaCaracterizacion');
+			
 			$table->String('Contraseña_Aprendiz');
 			$table->string('Eps');
 			

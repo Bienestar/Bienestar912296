@@ -12,17 +12,7 @@
 					{!! Form::model($novedades, ['route' => 'novedad.update', 'method' => 'put', 'novalidate']) !!}
 						{!! Form::hidden('id', $novedades->id) !!}
 
-						<div class="form-group">
-						{!! Form::label('tipo','Tipo') !!}
-						{!! Form::text('Tipo_Novedad', null,['class' => 'form-control']) !!}
-						</div>
-
-						<div class="form-group">
-						{!! Form::label('desc','Descripcion') !!}
-						{!! Form::text('Descripcion', null,['class' => 'form-control']) !!}
-						</div>
-
-			
+							@include(Novedades.plantilla.plantilla)
 							
 						<div class="form‐group">
 						{!! Form::submit('Enviar', ['class' => 'btn btn‐success ' ] ) !!}
@@ -30,6 +20,8 @@
 			
 					
 				{!! Form::close() !!}
+			</div>
+			</div>
 			</div>
 		</div>
 	</div>

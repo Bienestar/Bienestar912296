@@ -16,7 +16,9 @@
 						{!! Form::submit('Enviar', ['class' => 'btn btn‐success ' ] ) !!}
 						</div>
 				{!! Form::close() !!}
+				</div>
+				</div>
+				</div>
 			</div>
 		</div>
-	</div>
 @endsection

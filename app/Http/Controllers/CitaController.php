@@ -70,8 +70,13 @@ class CitaController extends Controller {
 	 */
 	public function edit($id)
 	{
-			$citas = Cita::find($id);
-		return \View::make('Citas/update',compact('citas'));
+		$citas = Cita::find($id);
+		$aprendiz = ['aprendiz' => Aprendiz::lists('Nombre_Aprendiz','id')];
+		$lugar = ['lugar' => Lugar::lists('Nombre_Lugar','id')];
+		$asesor = ['asesor' => Asesor::lists('Nombre_Asesor','id')];
+
+		
+		return \View::make('Citas/update',compact('citas','aprendiz','asesor','lugar'));
 	}
 
 	/**
@@ -91,7 +96,7 @@ class CitaController extends Controller {
 		$citas->Fk_IdAsesor = $request->Fk_IdAsesor;
 
 		$citas->save();
-		return redirect('lugar');
+		return redirect('cita');
 	}
 
 	/**

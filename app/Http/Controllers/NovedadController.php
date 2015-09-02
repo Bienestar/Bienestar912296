@@ -65,9 +65,10 @@ class NovedadController extends Controller {
 	 * @return Response
 	 */
 	public function edit($id)
-	{
+	{	
+		$asesor => ['asesor' => Asesor::lists('Nombre_asesor','id')];
 		$novedades = Novedad::find($id);
-		return \View::make('Novedades/update',compact('novedades'));
+		return \View::make('Novedades/update',compact('novedades','asesor'));
 	}
 
 	/**

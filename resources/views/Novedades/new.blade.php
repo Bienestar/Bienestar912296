@@ -14,15 +14,17 @@
 				{!! Form::open(['route' => 'novedad.store', 'method' => 'post', 'novalidate']) !!}
 			
 						
-						
-				@include('Novedades.plantilla.plantilla')
+							
+					@include('Novedades.plantilla.plantilla')
 
-			<div class="form‐group">
-					{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
-			</div>
-	{!! Form::close() !!}
+					<div class="form‐group">
+						{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
+					</div>
+				{!! Form::close() !!}
 
-		</div>
+				</div>
+				</div>
+	</div>
 	</div>
 </div>
 @endsection

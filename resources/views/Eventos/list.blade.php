@@ -5,15 +5,11 @@
 		{!! Form::open(['route' => 'evento.index', 'method' => 'GET', 'novalidate', 'class' => 'form‐inline', 'role' => 'search']) !!}
 			<div class="navbar-form navbar-left">
 				<label for="exampleInputName2">Nombre del Evento</label>
-
 				{!! Form::text('name',null,['class' => 'form-control', 'placeholder' => 'Bazar']) !!}
-				
-						
-
 				<button type="submit" class="btn btn-primary">Buscar</button>
 				<a href="{{ route('evento.index') }}" class="btn btn-success">Todo</a>
 				<a href="{{ route('evento.create') }}" class="btn btn-success">Crear Evento</a>
-				</div>
+			</div>
 		{!! Form::close() !!}
 	<br>
 	

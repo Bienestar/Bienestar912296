@@ -11,16 +11,18 @@
 				<div class="panel-body">
 
 				@include('Plantilla.validacion')
-	{!! Form::open(['route' => 'lugar.store', 'method' => 'post', 'novalidate']) !!}
-			
-				@include('lugares.plantilla.plantilla')
+				{!! Form::open(['route' => 'lugar.store', 'method' => 'post', 'novalidate']) !!}
+						
+							@include('lugares.plantilla.plantilla')
 
-			<div class="form‐group">
-					{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
-			</div>
-	{!! Form::close() !!}
+						<div class="form‐group">
+								{!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
+						</div>
+				{!! Form::close() !!}
 
-		</div>
+				</div>
+	</div>
+	</div>
 	</div>
 </div>
 @endsection

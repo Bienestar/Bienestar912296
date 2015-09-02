@@ -4,13 +4,11 @@
 		<div class="row">
 		{!! Form::open(['route' => 'lugar.index', 'method' => 'GET', 'novalidate', 'class' => 'form‐inline', 'role' => 'search']) !!}
 			<div class="navbar-form navbar-left">
+
 				<label for="exampleInputName2">Nombre del lugar</label>
-
 				{!! Form::text('name',null,['class' => 'form-control', 'placeholder' => 'Capilla']) !!}
-				
-						
-
 				<button type="submit" class="btn btn-primary">Buscar</button>
+			
 				<a href="{{ route('lugar.index') }}" class="btn btn-success">Todo</a>
 				<a href="{{ route('lugar.create') }}" class="btn btn-success">Nuevo Lugar</a>
 				</div>
@@ -32,10 +30,10 @@
 			<td>{{ $lugar->Nombre_Lugar }}</td>
 			<td>{{ $lugar->Tipo_Lugar }}</td>
 			<td>{{ $lugar->Descripcion }}</td>
-		<td>
+			<td>
 			<a class="btn btn-primary" href="{{ route('lugar.edit' , ['id' => $lugar->id]) }}" >Editar</a>
 			<a class="btn btn-danger" href="{{ route('lugar/destroy', ['id' => $lugar->id]) }}" >Eliminar</a>
-		</td>
+			</td>
 		</tr>
 	@endforeach
 	</tbody>
