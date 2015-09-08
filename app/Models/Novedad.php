@@ -9,17 +9,5 @@ class Novedad extends Model {
 	protected $fillable =['Tipo_Novedad','Descripcion','Fk_IdAsesor'];
 	protected $guarded =['id'];
 
-<<<<<<< HEAD
 
-	public function scopeName($query, $name)
-	{
-		if(trim($name !=""))
-			{
-				$query->where('Tipo_Novedad',"like","%$name%");
-			}
-
-	}
-
-=======
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

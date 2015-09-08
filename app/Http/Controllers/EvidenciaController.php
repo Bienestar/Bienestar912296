@@ -4,11 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 //extendemos hacia el modelo
 use App\Models\Evidencia as Evidencia;
-<<<<<<< HEAD
-use App\Models\Aprendiz as Aprendiz;
-=======
 
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+use App\Models\Aprendiz as Aprendiz;
+
+
 use Illuminate\Http\Request;
 
 class EvidenciaController extends Controller {
@@ -18,16 +17,15 @@ class EvidenciaController extends Controller {
 	 *
 	 * @return Response
 	 */
-<<<<<<< HEAD
+
 	public function index(Request $request)
 	{	
 		$evidencias = Evidencia::nombre($request->get('nombre'))->orderBy('Nombre_Evidencia','asc')->paginate(4);
 		return \View::make('Evidencias/list', compact('evidencias'));
-=======
+
 	public function index()
 	{
-		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+		
 	}
 
 	/**
@@ -36,14 +34,14 @@ class EvidenciaController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-<<<<<<< HEAD
+
 	{	
 		$aprendiz = ['aprendiz' => Aprendiz::lists('Nombre_Aprendiz','id')];
 		return \View::make('Evidencias/new')->with('aprendiz');
-=======
+
 	{
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -51,17 +49,16 @@ class EvidenciaController extends Controller {
 	 *
 	 * @return Response
 	 */
-<<<<<<< HEAD
 	public function store(Request $request)
 	{
 		$evidencia = new Evidencia;
 		$evidencia->create($request->all());
 		return redirect('evidencia');
-=======
+
 	public function store()
 	{
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -83,12 +80,12 @@ class EvidenciaController extends Controller {
 	 */
 	public function edit($id)
 	{
-<<<<<<< HEAD
+
 		$evidencias = Evidencia::find($id);
 		return \View::make('Evidencias/update',compact('evidencias'));
-=======
+
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -97,7 +94,7 @@ class EvidenciaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-<<<<<<< HEAD
+
 	public function update(Request $request)
 	{
 		$evidencias = Evidencia::find($request->id);
@@ -107,11 +104,11 @@ class EvidenciaController extends Controller {
 
 		$evidencias->save();
 		return redirect('lugar');
-=======
+
 	public function update($id)
 	{
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -122,7 +119,6 @@ class EvidenciaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-<<<<<<< HEAD
 	
 	}
 
@@ -132,9 +128,8 @@ class EvidenciaController extends Controller {
 		return \View::make('Evidencias/list', compact('evidencias'));
 
 	}
-=======
+
 		//
 	}
 
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
 }

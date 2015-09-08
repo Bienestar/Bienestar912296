@@ -14,16 +14,16 @@ class EventoController extends Controller {
 	 *
 	 * @return Response
 	 */
-<<<<<<< HEAD
+
 	public function index(Request $request)
 	{
 		$eventos = Evento::name($request->get('name'))->orderBy('FechaIncio_Evento','asc')->paginate(5);
 		return \View::make('Eventos/list', compact('eventos'));
-=======
+
 	public function index()
 	{
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -33,11 +33,11 @@ class EventoController extends Controller {
 	 */
 	public function create()
 	{
-<<<<<<< HEAD
+
 			return \View::make('Eventos/new');
-=======
+
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -45,17 +45,17 @@ class EventoController extends Controller {
 	 *
 	 * @return Response
 	 */
-<<<<<<< HEAD
+
 	public function store(Request $request)
 	{
 		$evento = new Evento;
 		$evento->create($request->all());
 		return redirect('evento');
-=======
+
 	public function store()
 	{
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -66,11 +66,11 @@ class EventoController extends Controller {
 	 */
 	public function show($id)
 	{
-<<<<<<< HEAD
+
 		
-=======
+
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+>
 	}
 
 	/**
@@ -81,12 +81,12 @@ class EventoController extends Controller {
 	 */
 	public function edit($id)
 	{
-<<<<<<< HEAD
+
 		$eventos = Evento::find($id);
 		return \View::make('Eventos/update',compact('eventos'));
-=======
+
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -95,7 +95,7 @@ class EventoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-<<<<<<< HEAD
+
 	public function update(Request $request)
 	{
 		$eventos = Evento::find($request->id);
@@ -111,11 +111,11 @@ class EventoController extends Controller {
 
 		$eventos->save();
 		return redirect('evento');
-=======
+
 	public function update($id)
 	{
 		//
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 	}
 
 	/**
@@ -126,7 +126,7 @@ class EventoController extends Controller {
 	 */
 	public function destroy($id)
 	{
-<<<<<<< HEAD
+
 		$evento = Evento::find($id);
 		$evento->delete();
 		return redirect()->back();
@@ -135,9 +135,9 @@ class EventoController extends Controller {
 
 
 
-=======
+
 		//
 	}
 
->>>>>>> 1b7ec500e165037160fb213dcb5f8bd45bfcf344
+
 }
